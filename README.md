@@ -25,6 +25,17 @@ up as your answer.
 ## Deploying
 
 `.github/workflows/pages.yml` publishes the repository root to GitHub Pages on
-every push. It needs Pages set to build from **GitHub Actions**:
+every push.
+
+Pages has to be switched on once by a repository admin — the workflow token is
+not allowed to create the site itself:
 
 Settings → Pages → Build and deployment → Source → *GitHub Actions*
+
+Then re-run the workflow (Actions → Deploy to GitHub Pages → Run workflow), or
+just push again. The site lands at
+`https://greenpandastudios.github.io/pitch-test/`.
+
+Picking *Deploy from a branch* instead also works — point it at this branch
+with the `/ (root)` folder — but then this workflow is redundant and will keep
+failing, so delete it if you go that way.
